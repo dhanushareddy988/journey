@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .title{ 
+            margin-bottom: 10px; 
+         text-align:center; 
+         width: 180px; 
+         color:green; 
+         border: solid black 2px; 
+         } 
+         input[type="button"] 
+         { 
+         background-color:rgb(128, 119, 0); 
+         color: black; 
+         border: solid black 2px; 
+         width:100% 
+         } 
+         .xy{
+
+            margin-bottom: 10px; 
+        
+         text-align:center; 
+         width: 180px; 
+         color:green; 
+         border: solid black 2px;
+         }
+  
+        #spanOutput{
+            display:block;
+            width:100%;
+            height:20px;
+            text-align:center;
+        }
+    </style>
+    <script src="calculator.js">
+        var add1 = Module.cwrap('add','number',['number','number'])
+         var subtract1 = Module.cwrap('subtract','number',['number','number'])
+       var multiply1 = Module.cwrap('multiply','number',['number','number'])
+        var divide1 = Module.cwrap('divide','number',['number','number'])
+    </script>
+</head>
+<body style="text-align: center;">
+    <div class = title >Calculator</div>
+    <div class = xy >
+    <table style="border: solid black 2px;">
+
+        <tr style="background-color: indigo;">
+            <td colspan="4"><input id="txtInput" style="text-align: right;" type="text"/></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span id="spanOutput" id="output"></span></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="button" value="Clear" onclick="javascript:clearAll()"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="+" onclick="javascript:setOperation(this)"/></td>
+            <td><input type="button" value="-" onclick="javascript:setOperation(this)"/></td>
+            <td><input type="button" value="*" onclick="javascript:setOperation(this)"/></td>
+            <td><input type="button" value="/" onclick="javascript:setOperation(this)"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="2" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="3" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="4" onclick="javascript:setArgument(this)"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="5" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="6" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="7" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="8" onclick="javascript:setArgument(this)"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="9" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="0" onclick="javascript:setArgument(this)"/></td>
+            <td><input type="button" value="=" onclick="javascript:getResult()"/></td>
+            <td></td>
+        </tr>
+        </div>
+    </table>
+
+    <script > 
+        
+        var add1 = Module.cwrap('add','number',['number','number'])
+         var subtract1 = Module.cwrap('subtract','number',['number','number'])
+       var multiply1 = Module.cwrap('multiply','number',['number','number'])
+        var divide1 = Module.cwrap('divide','number',['number','number'])
+        txtInput = document.querySelector('#txtInput');
+        spanOutput = document.querySelector('#spanOutput');
+        let arg1 = 0;
+        let arg2 = 0;
+        let hasArg2 = false;
+        let operation = '';
+
+        function setArgument(target){
+            let value = parseFloat(target.value);
+
+            //update the number in input
+            txtInput.value = txtInput.value.toString() + value.toString();
+
+            if(!hasArg2){ //Set 1st argument
+                arg1 = parseFloat(txtInput.value);
+                spanOutput.innerHTML = arg1;
+            }
+            else{ //Set 2nd argument
+                arg2 = parseFloat(txtInput.value);
+                spanOutput.innerHTML = `${arg1} ${operation} ${arg2}`;   
+            }
+        }
+
+        function setOperation(target){
+            operation = target.value;             
+            spanOutput.innerHTML = (hasArg2) ? `${arg1} ${operation} ${arg2}` : `${arg1} ${operation}`;    
+            hasArg2 = true;       
+            txtInput.value = '';
+           // updateOutput();
+        }
+
+        function getResult(){
+            let result = 0;
+            switch(operation){
+                case '+':
+                    result = add1(arg1, arg2);
+                    break;
+                case '-':
+                    result = subtract1(arg1, arg2);
+                    break;
+                case '*':
+                    result = multiply1(arg1, arg2);
+                    break;
+                case '/':
+                    result = divide1(arg1, arg2);
+                    break;
+            }
+            spanOutput.innerHTML = result;
+            txtInput.value = result;
+            arg1 = result;
+            hasArg2 = false;
+        }
+
+        function clearAll(){
+            arg1 = arg2 = 0;
+            operation = '';
+            hasArg2 = false;
+            txtInput.value = '';
+            spanOutput.innerHTML = '';
+        }
+
+    </script>
+</body>
+</html>
