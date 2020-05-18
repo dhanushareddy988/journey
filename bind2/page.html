@@ -1,0 +1,15 @@
+<html>
+    <head> Classes</head>
+    <body>
+        <script src="/class1.js"></script>
+<script>
+    Module.onRuntimeInitialized = _ => {
+  const c = new Module.Count(22);
+  console.log(c.x); // prints 22
+  c.increase();
+  console.log(c.x); // prints 23
+  console.log(c.squareCount()); // prints 529
+};
+</script>
+    </body>
+</html>
