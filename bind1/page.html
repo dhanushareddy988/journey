@@ -1,0 +1,12 @@
+<html>
+    <head> Demo</head>
+    <body>
+        <script src="/bind.js"></script>
+<script>
+Module.onRuntimeInitialized = async_ => {
+  console.log(Module.add(1, 2.3));
+  console.log(Module.exclaim("hello world"));
+};
+</script>
+    </body>
+</html>
