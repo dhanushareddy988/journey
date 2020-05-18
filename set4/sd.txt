@@ -1,0 +1,109 @@
+sorting  algos with TC best worst and average
+   Quick **
+   Merge
+   selection
+   Bubble
+    Insertion
+    Heap***
+searching
+   Linear search order of n
+   Binary Search order of log n
+Hashing order of 1 * 
+traversing  algos of all data structures (array stack linked list queue tree graph)
+BFS DFS for graph 
+ 
+
+tree traversals
+inorder
+preorder
+post order
+level order**
+boundry order 
+tree lo inka chala topics untai important like finding height of tree 
+ finding no of nodes in tree
+finding no of leaf nodes
+mirror tree 
+symetry in a tree
+ parent child sum tree ancestors of a node in tree
+ila chala oka 30 40 important problems untai gfg lo chudu
+
+
+Arrays and their manipulations
+strings  and thier manipulation like reversing string vowels consonets manipulations on strings 
+given a string containing both alphabets and numbers seperate numbers and print them 
+eg: 23ghsh3bh423
+  ans 23 ,3 ,423 
+linked list 
+  first important que in Linked list asked almost in every interview Reverse a linked list 
+merge sort on linked list
+merge two sorted linked lists 
+delete node all positions nerchuko  first last nth position
+insert nodes at all positions agains 
+ cycle detection in linked list and removing it floyd's cycle detection algo very very star marked que oka video undi youtube lo edi kuda prati interview lo adigina que 
+sort a linked list
+remove dups in a sorted linked list 
+add two numbers represented by a linked list ila oka 20 chesko linked list que standard vi 
+same in double linked list
+
+
+
+Queue 
+stack
+Blancing braces using stack *
+ Impliment stack using array
+Impliment queue using array
+Impliment stack using queues
+Impliment queue using stack
+Find  the max element in stack with order of 1 TC 
+
+
+
+Trees 
+idi oka pedda topic
+  min oka 30 problems ayna solve chey standard vi pina cheppinavi traversals and all
+migatadi theory nerchuko
+ AVL tree
+Binary Tree
+complete Binary tree
+Binary search tree
+B tree
+
+
+
+Graphs 
+  ee topic lo oka 4 5 chesko  cheyalanna avvavu graphs lo so theory ekkuva chusko 
+ BFS DFS  
+Dijkra Algo for shortest path 
+prisms algo
+krushkals algo
+Floydd warshalls pair shortest path algo video vundi deni mida chala easy ga cheppadu I will share it
+
+
+
+Bit manipulation
+ convert given binary to decimal 
+convert given decimal to binary
+find no of 1s in the given binary string
+xor manipulations google que undi xor topic mida
+And or manipulations 
+
+
+Hashing and Hashmap
+ na oracle interview 2 rounds lo hashing mida adigaru its soo important
+  find frequency of a charecter in a string
+find no of times a word repeats in an array of strings 
+find no of pairs in an array whose sum is x in order of 1 
+ila oka 20 ayna chesko hashing standard que 
+
+Dynamic programming
+  Least common subsequence 
+Least common subarray
+ Thief stoles max but not alternate houses idi chala easy 
+How many ways to reach the last element of an array
+KMP string matching algo
+
+ivi theory matram chusko
+  Greedy algos
+   matrix chain multiplication 
+ Backtracking
+ knapsack problem
