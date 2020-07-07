@@ -1,0 +1,49 @@
+=================================================================
+==11024==ERROR: AddressSanitizer: access-violation on unknown address 0xffffffffffffffff (pc 0x7ffd47015052 bp 0x0045a9df8b60 sp 0x0045a9df8940 T0)
+==11024==The signal is caused by a READ memory access.
+    #0 0x7ffd47015051 in v8::internal::wasm::InstantiateToInstanceObject(class v8::internal::Isolate *,class v8::internal::wasm::ErrorThrower *,class v8::internal::Handle<class v8::internal::WasmModuleObject>,class v8::internal::MaybeHandle<class v8::internal::JSReceiver>,class v8::internal::MaybeHandle<class v8::internal::JSArrayBuffer>) C:\b\c\b\win_asan_release\src\v8\src\wasm\module-compiler.cc:318:19
+    #1 0x7ffd470abb47 in v8::internal::wasm::WasmEngine::SyncInstantiate(class v8::internal::Isolate *,class v8::internal::wasm::ErrorThrower *,class v8::internal::Handle<class v8::internal::WasmModuleObject>,class v8::internal::MaybeHandle<class v8::internal::JSReceiver>,class v8::internal::MaybeHandle<class v8::internal::JSArrayBuffer>) C:\b\c\b\win_asan_release\src\v8\src\wasm\wasm-engine.cc:55:10
+    #2 0x7ffd470fe33b in v8::`anonymous namespace'::WebAssemblyInstantiateImpl C:\b\c\b\win_asan_release\src\v8\src\wasm\wasm-js.cc:339:49
+    #3 0x7ffd470fd62d in v8::`anonymous namespace'::WebAssemblyInstantiateImplCallback C:\b\c\b\win_asan_release\src\v8\src\wasm\wasm-js.cc:362:7
+    #4 0x7ffd45821577 in v8::internal::FunctionCallbackArguments::Call(class v8::internal::CallHandlerInfo *) C:\b\c\b\win_asan_release\src\v8\src\api-arguments-inl.h:93:3
+    #5 0x7ffd4581e034 in v8::internal::`anonymous namespace'::HandleApiCallHelper<0> C:\b\c\b\win_asan_release\src\v8\src\builtins\builtins-api.cc:107:36
+    #6 0x7ffd4581ae4b in v8::internal::Builtin_Impl_HandleApiCall C:\b\c\b\win_asan_release\src\v8\src\builtins\builtins-api.cc:137:5
+    #7 0x7ffd4581a196 in v8::internal::Builtin_HandleApiCall(int,class v8::internal::Object * *,class v8::internal::Isolate *) C:\b\c\b\win_asan_release\src\v8\src\builtins\builtins-api.cc:125:1
+    #8 0x1267c1b046e0  (<unknown module>)
+    #9 0x1c7b8c4e29b1  (<unknown module>)
+    #10 0x7ffd46d793de in v8::internal::Runtime_PromiseHookInit(int,class v8::internal::Object * *,class v8::internal::Isolate *) C:\b\c\b\win_asan_release\src\v8\src\runtime\runtime-promise.cc:114
+    #11 0x1267e7e04f38  (<unknown module>)
+    #12 0x1267e7e04f38  (<unknown module>)
+    #13 0xfffffffffffffffe  (<unknown module>)
+    #14 0x1241b870a4c7  (<unknown module>)
+    #15 0x1267c1b04640  (<unknown module>)
+    #16 0x45a9df968f  (<unknown module>)
+    #17 0x5  (<unknown module>)
+    #18 0x45a9df972f  (<unknown module>)
+    #19 0x7ffd474b4d2f in v8::internal::Snapshot::DefaultSnapshotBlob(void) (D:\downloads_chrome\win32-release_x64%2Fasan-win32-release_x64-552716\asan-win32-release_x64-552716\chrome_child.dll+0x183aa4d2f)
+    #20 0x1267e1b824b8  (<unknown module>)
+    #21 0x1267e7eee338  (<unknown module>)
+    #22 0x5ffffffff  (<unknown module>)
+    #23 0x1267e1b82560  (<unknown module>)
+    #24 0x1267e690f358  (<unknown module>)
+    #25 0x1267e7b052c8  (<unknown module>)
+    #26 0x1267e7e04f38  (<unknown module>)
+    #27 0x1267e690eab0  (<unknown module>)
+    #28 0x15  (<unknown module>)
+    #29 0x45a9df9787  (<unknown module>)
+    #30 0x7ffd4749840b in v8::internal::Snapshot::DefaultSnapshotBlob(void) (D:\downloads_chrome\win32-release_x64%2Fasan-win32-release_x64-552716\asan-win32-release_x64-552716\chrome_child.dll+0x183a8840b)
+    #31 0x1267e690f378  (<unknown module>)
+    #32 0x1267e7eee338  (<unknown module>)
+    #33 0x1267e690f358  (<unknown module>)
+    #34 0x1267e7e04f38  (<unknown module>)
+    #35 0x1267e690eab0  (<unknown module>)
+    #36 0x1267e7e04f38  (<unknown module>)
+    #37 0x0  (<unknown module>)
+    #38 0x0  (<unknown module>)
+    #39 0x15  (<unknown module>)
+    #40 0x45a9df989f  (<unknown module>)
+    #41 0x1267c1b075d4  (<unknown module>)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: access-violation C:\b\c\b\win_asan_release\src\v8\src\wasm\module-compiler.cc:318:19 in v8::internal::wasm::InstantiateToInstanceObject(class v8::internal::Isolate *,class v8::internal::wasm::ErrorThrower *,class v8::internal::Handle<class v8::internal::WasmModuleObject>,class v8::internal::MaybeHandle<class v8::internal::JSReceiver>,class v8::internal::MaybeHandle<class v8::internal::JSArrayBuffer>)
+==11024==ABORTING
